@@ -1,6 +1,7 @@
 <?php
 /**
- * @file ex1.php
+ * @file index.php
+ *    Exercise #1
  *
  * We can work with existing objects before we think about creating our own.
  * there are many already built in to PHP. As an example, take a look at the
@@ -29,6 +30,7 @@ if ($_POST) {
 <html>
 <head>
   <title>Existing Objects | PHP4Devs</title>
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
 <body>
   <h1>Date thingy!</h1>

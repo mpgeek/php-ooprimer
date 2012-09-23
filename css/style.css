@@ -1,0 +1,25 @@
+body {
+  font-family:monospace;
+  border-top:22px solid #047a9a;
+  background: url(low_contrast_linen.png) left top repeat;
+  color:#00b1e6;
+  margin:0;
+  padding:40px 20px;
+}
+p {
+  line-height: 1.6em;
+}
+h1 {color:#d4cb24;}
+h2 {color:#acacac;}
+a {
+  color:#99CC00;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.social-icon {
+  display: block;
+  float:left;
+  margin:4px 16px 0 0;
+}

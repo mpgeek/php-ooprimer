@@ -1,6 +1,7 @@
 <?php
 /**
- * @file ex2.php
+ * @file index.php 
+ *		Excercise #2
  *
  * Create an Article class of your own, with a constructor, and instantiate it.
  * Call var_dump (or something similar) to check that your object is what you
@@ -36,7 +37,7 @@ function my_autoloder($classname) {
 spl_autoload_register('my_autoloder');
 
 
-$meTitle = 'Teletubbies, yo!';
+$meTitle = 'Teletubbies, Yo!';
 $meBody = 'Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that\'s what you see at a toy store. And you must think you\'re in a toy store, because you\'re here shopping for an infant named Jeb.';
 
 $meArticle = new Article($meTitle, $meBody); 
@@ -46,11 +47,15 @@ $meArticle = new Article($meTitle, $meBody);
 <html>
 <head>
   <title>A Simple Class | PHP4Devs</title>
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
 </head>
 <body>
   <h1>Simple Class Thingy!</h1>
-  <p><?php print '<pre>' . print_r($meArticle,TRUE) . '</pre>' ?></p>
+  <?php //print '<pre>' . print_r($meArticle,TRUE) . '</pre>' ?>
+  <p>Here's my glorious article...</p>
+  <h2><?php print $meArticle->getTitle() ?></h2>
+  <p><?php print $meArticle->getBody() ?></h2>
   <h2>An Excerpt</h2>
-  <p><?php print $meArticle->getExcerpt(38) ?></p>
+  <p><?php print $meArticle->getExcerpt(40) ?></p>
 </body>
 </html>
