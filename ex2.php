@@ -30,12 +30,11 @@
 
 // A real application would have a more useful path, and possibly a more
 // interesting determination of that path.
-define('CLIB_PATH', '../classes');	
+define('CLIB_PATH', 'clib');	
 function my_autoloder($classname) {
 	include(CLIB_PATH . '/' . $classname . '.class.php'); 
 }
 spl_autoload_register('my_autoloder');
-
 
 $meTitle = 'Teletubbies, Yo!';
 $meBody = 'Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that\'s what you see at a toy store. And you must think you\'re in a toy store, because you\'re here shopping for an infant named Jeb.';
@@ -47,7 +46,7 @@ $meArticle = new Article($meTitle, $meBody);
 <html>
 <head>
   <title>A Simple Class | PHP4Devs</title>
-  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
   <h1>Simple Class Thingy!</h1>
@@ -57,5 +56,7 @@ $meArticle = new Article($meTitle, $meBody);
   <p><?php print $meArticle->getBody() ?></h2>
   <h2>An Excerpt</h2>
   <p><?php print $meArticle->getExcerpt(40) ?></p>
+  <p>&nbsp;</p>
+  <p><small>&#214; <a href="index.html">BACK 2 INDEX</a> &#214;</small></p>
 </body>
 </html>

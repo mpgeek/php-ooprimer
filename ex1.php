@@ -30,7 +30,7 @@ if ($_POST) {
 <html>
 <head>
   <title>Existing Objects | PHP4Devs</title>
-  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
   <h1>Date thingy!</h1>
@@ -46,6 +46,8 @@ if ($_POST) {
   <?php else: ?>
     <p>I respond to input and I cannot read your mind.</p>
   <?php endif; ?>
+  <p>&nbsp;</p>
+  <p><small>&#214; <a href="index.html">BACK 2 INDEX</a> &#214;</small></p>
 </body>
 </html>
 

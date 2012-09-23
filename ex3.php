@@ -15,7 +15,7 @@
  */
 
 // Autoload our classes.
-define('CLIB_PATH', '../classes');	
+define('CLIB_PATH', 'clib');	
 function my_autoloder($classname) {
 	include(CLIB_PATH . '/' . $classname . '.class.php'); 
 }
@@ -26,15 +26,11 @@ spl_autoload_register('my_autoloder');
 <html>
 <head>
   <title>Extending a Class | PHP4Devs</title>
-  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
-  <h1>Simple Class Thingy!</h1>
-  <?php //print '<pre>' . print_r($meArticle,TRUE) . '</pre>' ?>
-  <p>Here's my glorious article...</p>
-  <h2><?php print $meArticle->getTitle() ?></h2>
-  <p><?php print $meArticle->getBody() ?></h2>
-  <h2>An Excerpt</h2>
-  <p><?php print $meArticle->getExcerpt(40) ?></p>
+  <h1>Class Inheritance</h1>
+  <p>&nbsp;</p>
+  <p><small>&#214; <a href="index.html">BACK 2 INDEX</a> &#214;</small></p>
 </body>
 </html>
