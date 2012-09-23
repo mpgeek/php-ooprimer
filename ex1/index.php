@@ -16,19 +16,12 @@
  * the date three weeks in the future, in UTC.
  */
 
-// If we've POSTed, take action.
-$meDisplayDate = 'NOTHING!';
-$in3weeksDisplay = 'NEVER!';
+// If we have input, make a DateTime object from it.
+$meDate = NULL;
 if ($_POST) {
-  $safe_input = filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING);
-  
-  // Make a date from input, create human-readable string for outuput.
-  $meDate = new DateTime($safe_input);
-  $meDisplayDate = $meDate->format('dS F, Y');
-
-  // Create human-readable date 3 weeks into the future from original.
-  $meDate->modify('+3 weeks');
-  $in3weeksDisplay = $meDate->format('dS F, Y'); 
+  $meDate = new DateTime(
+    filter_input(INPUT_POST, 'date', FILTER_SANITIZE_STRING)
+  );
 } 
 
 ?>
@@ -46,7 +39,11 @@ if ($_POST) {
     </form>
   </p>
   <h2>Response</h2>
-  <p>You entered <?php echo $meDisplayDate ?>. Three weeks in the future from then is <?php echo $in3weeksDisplay ?>.</p>
+  <?php if (isset($meDate)): ?>
+    <p>You entered <?php echo $meDate->format('dS F, Y'); ?>. Three weeks in the future from then is <?php $meDate->modify('+3 weeks'); echo $meDate->format('dS F, Y'); ?>.</p>
+  <?php else: ?>
+    <p>I respond to input and I cannot read your mind.</p>
+  <?php endif; ?>
 </body>
 </html>
 
