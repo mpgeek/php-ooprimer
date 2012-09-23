@@ -29,7 +29,7 @@
 
 // A real application would have a more useful path, and possibly a more
 // interesting determination of that path.
-define('CLIB_PATH', '.');	
+define('CLIB_PATH', '../classes');	
 function my_autoloder($classname) {
 	include(CLIB_PATH . '/' . $classname . '.class.php'); 
 }
