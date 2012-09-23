@@ -54,9 +54,10 @@ $meArticle = new Article($meTitle, $meBody);
   <p>Here's my glorious article...</p>
   <h2><?php print $meArticle->getTitle() ?></h2>
   <p><?php print $meArticle->getBody() ?></h2>
-  <h2>An Excerpt</h2>
-  <p><?php print $meArticle->getExcerpt(40) ?></p>
+  <h2>A Teaser: 40 Characters</h2>
+  <p><?php print $meArticle->getTeaser(40) ?></p>
   <p>&nbsp;</p>
+  <hr />
   <p><small>&#214; <a href="index.html">BACK 2 INDEX</a> &#214;</small></p>
 </body>
 </html>

@@ -9,8 +9,10 @@ body {
 p {
   line-height: 1.6em;
 }
+hr {opacity:0.08;}
 h1 {color:#d4cb24;}
 h2 {color:#acacac;}
+h3 {color:#949B94;}
 a {
   color:#99CC00;
   text-decoration: none;

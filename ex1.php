@@ -47,6 +47,7 @@ if ($_POST) {
     <p>I respond to input and I cannot read your mind.</p>
   <?php endif; ?>
   <p>&nbsp;</p>
+  <hr />
   <p><small>&#214; <a href="index.html">BACK 2 INDEX</a> &#214;</small></p>
 </body>
 </html>

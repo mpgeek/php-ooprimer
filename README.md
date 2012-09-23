@@ -6,4 +6,4 @@ This is mostly a reference notebook for me so i remember how OOP works in PHP. B
 
 ## Intallation & Usage
 
-Simply place this whole project in a directory that your LAMP stack can access in a web browser.
+Simply place this whole project in a directory that your LAMP stack can access in a web browser, and visit the root.

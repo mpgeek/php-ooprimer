@@ -1,6 +1,6 @@
 <?php
 /**
- * @file Article.php
+ * @file Article.class.php
  *		This is our first simple class. EARTH SHATTERING!
  */
 
@@ -39,7 +39,7 @@ class Article {
 	// is less than one, or larger then the character count in the body, an
 	// error string is retured instead.
 
-	public function getExcerpt($length) {
+	public function getTeaser($length) {
 		$info = 'Cannot get an excerpt of length ' . $length;
 		if ((((int)$length) < 1) || (((int)$length) <= strlen($this->body))) {
 			$info = substr($this->body, 0, $length);
