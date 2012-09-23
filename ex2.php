@@ -1,7 +1,7 @@
 <?php
 /**
- * @file index.php 
- *		Excercise #2
+ * @file ex2.php 
+ *		Excercise #2: Class Inheritance
  *
  * Create an Article class of your own, with a constructor, and instantiate it.
  * Call var_dump (or something similar) to check that your object is what you

@@ -15,15 +15,16 @@ class Article {
 	// title and body. This is known as dependency injection. We could have opted
 	// for providing default arguments if none were supplied (another time).
 	public function __construct($title, $body) {
+		if (strlen($title) < 1) {
+			throw new InvalidArgumentException('Title must contain something.');
+		}
+		if (strlen($body) < 1) {
+			throw new InvalidArgumentException('Body must contain something');
+		}
 		$this->title = $title;
 		$this->body = $body;
 	}
 	
-	// A destructor insn't mandatory, but memories of C/C++ make me think when
-	// we build more-complex objects, we will want destructors to manage memory
-	// and prevent leaks (maybe not, but we'll see).
-	public function __destruct() {}
-
 	// Simple getter.
 	public function getTitle() {
 		return $this->title;
@@ -35,16 +36,16 @@ class Article {
 	}
 
 	// Get an excerpt that is $length characters long, starting from the
-	// beginning. The break may be in teh middle of a word. If the length
-	// is less than one, or larger then the character count in the body, an
-	// error string is retured instead.
-
+	// beginning. Throws an out of range exception if the requested
+	// length is larger than the body legth or if it is negative.
 	public function getTeaser($length) {
-		$info = 'Cannot get an excerpt of length ' . $length;
-		if ((((int)$length) < 1) || (((int)$length) <= strlen($this->body))) {
-			$info = substr($this->body, 0, $length);
+		if ($length >= strlen($this->body)) {
+			throw new OutOfRangeException('Teaser length requested is longer than the body of the article.');
+		} elseif ($length < 0) {
+			throw new OutOfRangeException('Teaser length cannot be negative');
 		}
-		return $info;
+
+		return substr($this->body, 0, $length);
 	}
 }
 

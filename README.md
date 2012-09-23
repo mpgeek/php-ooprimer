@@ -7,3 +7,10 @@ This is mostly a reference notebook for me so i remember how OOP works in PHP. B
 ## Intallation & Usage
 
 Simply place this whole project in a directory that your LAMP stack can access in a web browser, and visit the root.
+
+## Related Consumables
+
+Crell has stuff to say relating to this topic:
+
+* Article: [Design Patterns in Drupal](http://drupalwatchdog.com/1/1/design-patterns-of-drupal "Drupal Watchdog Article on Design Patterns in Drupal")
+* Video: [Code Stinks](http://london2011.drupal.org/conference/sessions/code-stinks "DrupalCon London 2011")

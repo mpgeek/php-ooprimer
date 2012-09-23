@@ -1,7 +1,7 @@
 <?php
 /**
- * @file index.php
- *    Exercise #1
+ * @file ex1.php
+ *    Exercise #1: Using Existing Classes
  *
  * We can work with existing objects before we think about creating our own.
  * there are many already built in to PHP. As an example, take a look at the

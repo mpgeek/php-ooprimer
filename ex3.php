@@ -21,30 +21,15 @@ function my_autoload ($classname) {
 }	
 spl_autoload_register('my_autoload');
 
-// Create the series.
+// Do the faux db_query to get the articles
+require_once('articles.inc');
+$articles = getArticleData();
+
+// Create the series and add the articles.
 $mySeries = new ArticleSeries();
-
-// Create article.
-// It would be cooler if the article data came from a form or input file,
-// i suppose. But we are intersted in OOP, so we'll just hardcode the creation
-// of articles and make up for that by doing fancy stuff with the Series.
-$title = 'Teletubbies, Yo!';
-$body = 'Do you see any Teletubbies in here? Do you see a slender plastic tag clipped to my shirt with my name printed on it? Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it? No? Well, that\'s what you see at a toy store. And you must think you\'re in a toy store, because you\'re here shopping for an infant named Jeb.';
-
-
-// Add it to the series.
-$mySeries->insert(new Article($title, $body));
-
-// Create second article, add it to the series.
-$title = 'Tech Nine';
-$body = 'Now that there is the Tec-9, a crappy spray gun from South Miami. This gun is advertised as the most popular gun in American crime. Do you believe that shit? It actually says that in the little book that comes with it: the most popular gun in American crime. Like they\'re actually proud of that shit.';
-$mySeries->insert(new Article($title, $body));
-
-// Create second article, add it to the series.
-$title = 'Ice, Man.';
-$body = 'You think water moves fast? You should see ice. It moves like it has a mind. Like it knows it killed the world once and got a taste for murder. After the avalanche, it took us a week to climb out. Now, I don\'t know exactly when we turned on each other, but I know that seven of us survived the slide... and only five made it out. Now we took an oath, that I\'m breaking now. We said we\'d say it was the snow that killed the other two, but it wasn\'t. Nature is lethal but it doesn\'t hold a candle to man.';
-$mySeries->insert(new Article($title, $body));
-
+foreach ($articles as $article) {
+  $mySeries->insert(new Article($article['title'], $article['body']));
+}
 
 ?>
 
@@ -56,7 +41,7 @@ $mySeries->insert(new Article($title, $body));
 <body>
   <h1>Class Inheritance</h1>
   <p></p>
-  <p>COMPUTING ...<br /><?php print '<pre>' . print_r($mySeries,TRUE) . '</pre>' ?></p>
+  <p>COMPUTING ...<br /><?php //print '<pre>' . print_r($mySeries,TRUE) . '</pre>' ?></p>
   <h2>There are <?php echo $mySeries->count() ?> articles in the series.</h2>
   <p>Here is a summary: </p>
   <ul>
