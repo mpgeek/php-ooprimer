@@ -14,7 +14,7 @@
  * choose!)
  */
 
-// Autoload our classes with an anonymous function.
+// Autoload our classes.
 define('CLIB_PATH', 'clib');
 function my_autoload ($classname) {
   include(CLIB_PATH . '/' . $classname . '.class.php'); 
